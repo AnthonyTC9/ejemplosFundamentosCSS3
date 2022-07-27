@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Propiedades de Ubicacion</title>
+    <style>
+        /*Selector niversal *  */
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+            font-family: sans-serif;
+        }
+        /*Margin: se puede ubicar en 4 coordenadas
+        Top, Right, Bottom y Left.
+        por ejemplo margin: 20px 30px 40px 50px
+        tambien se pueden utilizar con 2 coordenadas
+        margin: vertical y horizontal
+        por ejemplo: margin:20px auto
+        si solo colocamos una cordenada estamos diciendo que tenga un margen al rededor
+        por ejemplo margin:20px, si solo queremos darle un margen a un lado seria
+        margen: 0px 0px 0px 20px o de margin-left:20px o margin-top:20px, esto solo para
+        especificar direccion del margen*/
+        header{
+            /*position para cajas principales es relativo*/
+            /*si se quiere sentrar se usa margen automatica.*/
+            /*la posicion relativa los margenes se organizan en 2 coordenadas: top y left*/
+            position: relative;
+            margin:20px auto; /*da espacio en top y bottom de 20px, right y left sigue auto*/
+            width:1000px;
+            height:120px;
+            /*background:#444;    */        
+        }
+
+        #logo{
+            /* la posicion absoluta usa top, left, bottom, right y 
+            para ubicarla podemos jugar con ellos, el top y bot no pueden estar
+            al mismo tiempo asi como left y right no deben estar al mismo tiempo*/
+            position: absolute;/*Nos permite ubicar una caja interna dentro de una caja principal*/
+            top:30px;
+            left:30px;
+            width:200px;
+            height:60px;
+           /* background:#ccc;*/
+            font-family: 'Indie Flower', cursive;
+            font-size: 50px;
+            text-align:center;
+            line-height:60px;
+        }
+        .redes{
+            position: absolute;
+            width:42px;
+            height:42px;
+            background:#ccc;
+            border-radius:100%;
+            text-align:center;
+            line-height:42px;
+            color:white;
+        }
+        #icono1{
+            top:42px;
+            right:120px;
+            background: blue;
+        }
+        #icono2{
+            top:42px;
+            right:71px;
+            background: green;
+        }
+        #icono3{
+            top:42px;
+            right:19px;
+            background: red;
+        }
+
+
+        nav{
+            position:relative;
+            margin:auto;
+            width:1000px;
+            height:48px;
+            /*background:#aaa;*/
+        }
+        .botones{
+            /*hace flotar ese listado que esta en vertical lo hace flotar a nivel horizontal*/
+            float:left; /*el left lo hace de izquierda a derecha*/
+            width:196px; /*Como le sume 2 pixeles a right y left, le reste 4 para que no se salga de la escala*/
+            height:48px;
+            background: rgb(58, 8, 122);
+            margin:0px 2px; /*Genera diviciones entre la barra de botones*/
+            font-family: 'Indie Flower', cursive;
+            text-align: center;
+            line-height: 48px;
+            color:white;
+        }
+
+        #top{
+            position:relative;
+            margin:20px auto;
+            width:1000px;
+            height:192px;
+            
+        }
+        #top ul{
+            width:1010px;
+            height:192px;
+            
+        }
+
+        #top ul li{
+            float:left;
+            width:326.6px;
+            height:192px;
+            /*background:#ccc;*/
+            margin-right: 10px;
+            text-align:center;
+
+        }
+        #top ul li img{
+            border-radius:100%;
+            height:100px;
+
+        }
+        #top ul li h1{
+            font-family: 'Indie Flower', cursive;
+
+        }
+        #top ul li p{
+            font-size: 14px;
+            margin:10px
+            
+        }
+
+        section{
+            position:relative;
+            margin:auto;
+            width:1000px;
+            height:453px;
+            /*background:#aaa;*/
+        }
+        /*llamamos el id izq de la caja aside  */
+        aside#izq{
+            position: absolute;
+            top:0px;
+            left:0px;
+            width:200px;
+            height:453px;
+            background:#000
+        }
+        article{           
+            position: absolute;
+            left:200px;
+            top:0;
+            width:600px;
+            height:453px;
+            /*background:#666 */       
+        }
+        article h1{
+            font-family: 'Indie Flower',cursive;
+            font-size:40px;
+            margin:10px;
+        }
+        article p img{
+            float:left;
+            margin-right: 10px;
+        }
+        article p{
+            margin:5px 10px;
+            font-size: 14px;
+            text-align: justify;
+        }
+        aside#der{
+            position: absolute;
+            top:0px;
+            right:0px;
+            width:200px;
+            height:453px;
+            background:#000
+        }
+
+
+        footer{
+            position:relative;
+            margin:20px auto;
+            width:1000px;
+            height: 70px;
+            background:rgba(58, 8, 122);
+            text-align:center;
+            line-height: 70px;
+            color:white;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <!--Inicio cabezote-->
+    <header>
+        <div id="logo">Logotipo</div>
+        <div id="icono1" class="redes">X</div> <!--Se le da la misma clase para que tengan el mismo diseño-->
+        <div id="icono2" class="redes">X</div>
+        <div id="icono3" class="redes">X</div>
+
+    </header>
+    <!--Cierre cabezote-->
+
+    <!--Inicio Barra de Navegacion-->
+    <nav>
+        <ul>
+            <li class="botones">Boton 1</li>
+            <li class="botones">Boton 2</li>
+            <li class="botones">Boton 3</li>
+            <li class="botones">Boton 4</li>
+            <li class="botones">Boton 5</li>
+        </ul>
+    </nav>
+    <!--Cierre Barra de Navegacion-->
+
+    <!--inicio parte Superior-->
+
+    <div id="top">
+        <ul>
+            <li>
+                <img src="img/img01.jpg" width="100">
+                <h1>Lorem Ipsum</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipscing elit.</p>
+            </li>
+
+            <li>
+                <img src="img/img02.jpg" width="100">
+                <h1>Lorem Ipsum</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipscing elit.</p>
+            </li>
+
+            <li>
+                <img src="img/img03.jpg" width="100">
+                <h1>Lorem Ipsum</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipscing elit.</p>
+            </li>
+        </ul>
+    </div>
+    <!--Cierre parte Superior-->
+
+    <!--Inicio Seccion-->
+
+    <section>
+        <aside id="izq"></aside>
+
+        <article>
+            <h1>Lorem Ipsum</h1>
+            <p><img src="img/foto.jpg" width="250">Lorem ipsum dolor sit amet, 
+                consectetur adipiscing elit. Quisque ac sem sodales, ullamcorper 
+                magna blandit, vestibulum urna. Donec purus dolor, finibus sit 
+                amet risus et, sagittis vulputate ante. Morbi et elit ut risus 
+                porttitor scelerisque ac ac enim. Fusce tempus, lacus vel 
+                scelerisque euismod, ligula dolor sodales tellus, a porttitor 
+                massa elit a metus.</p>
+                <br>
+                <p>Integer in sapien id sapien aliquet lacinia. In aliquam orci a
+                     sapien tincidunt mattis. Etiam ac laoreet urna, nec sagittis 
+                     magna. Orci varius natoque penatibus et magnis dis parturient 
+                     montes, nascetur ridiculus mus. Vestibulum facilisis augue ac 
+                     nisi vulputate tempor. Donec lobortis ipsum ut facilisis euismod.
+                     Donec purus dolor, finibus sit 
+                     amet risus et, sagittis vulputate ante. Morbi et elit ut risus 
+                     porttitor scelerisque ac ac enim. Fusce tempus, lacus vel 
+                     scelerisque euismod, ligula dolor sodales tellus, a porttitor 
+                     massa elit a metus.Donec purus dolor, finibus sit 
+                     amet risus et, sagittis vulputate ante. Morbi et elit ut risus 
+                     porttitor scelerisque ac ac enim. Fusce tempus, lacus vel 
+                     scelerisque euismod, ligula dolor sodales tellus, a porttitor 
+                     massa elit a metus.Donec purus dolor, finibus sit 
+                     amet risus et, sagittis vulputate ante. Morbi et elit ut risus 
+                     porttitor scelerisque ac ac enim. Fusce tempus, lacus vel 
+                     scelerisque euismod, ligula dolor sodales tellus, a porttitor 
+                     massa elit a metus.Donec purus dolor, finibus sit 
+                     amet risus et, sagittis vulputate ante. Morbi et elit ut risus 
+                     porttitor scelerisque ac ac enim. Fusce tempus, lacus vel 
+                     scelerisque euismod, ligula dolor sodales tellus, a porttitor 
+                     massa elit a metus.</p>
+        </article>
+
+        <aside id="der"></aside>
+
+    </section>
+    <!--Cierre de Seccion -->
+        
+    <!--inicio footer-->
+    <footer>
+        &copy; Todos los derechos riservados
+    </footer>
+    <!--Cierre footer-->
+
+
+    
+</body>
+</html>
